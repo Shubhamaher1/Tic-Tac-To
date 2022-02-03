@@ -9,28 +9,39 @@ class App extends Recat.Component {
         ["", "", ""],
         ["", "", ""],
         ["", "", ""]
-      ]
-      ,
-      tern:"x"
+      ],
+      tern: "x"
     };
   }
-  updateBoard=(row,col)=>{
-    const newArr= this.state.boardState;
-    newArr[row][col]=this.state.tern;
+  updateBoard = (row, col) => {
+    const newArr = this.state.boardState;
+    newArr[row][col] = this.state.tern;
     this.setState({
-      tern: this.state.tern =="x" ? "0":"x",
-      boardState:newArr,
-    }
-    )
-  }
+      tern: this.state.tern == "x" ? "0" : "x",
+      boardState: newArr
+    });
+  };
   render() {
     //  const Array = [<GridRow/>,<GridRow/>,<GridRow/>];
     return (
       <>
-        <div className="container">
-          <GridRow index={0} boardState={this.state.boardState} updateBoard={this.updateBoard} />
-          <GridRow index={1} boardState={this.state.boardState} updateBoard={this.updateBoard} />
-          <GridRow index={2} boardState={this.state.boardState} updateBoard={this.updateBoard} />
+        <div className="container" style={{ alignItems: "center" }}>
+          <h1>Tic Tac To</h1>
+          <GridRow
+            index={0}
+            boardState={this.state.boardState}
+            updateBoard={this.updateBoard}
+          />
+          <GridRow
+            index={1}
+            boardState={this.state.boardState}
+            updateBoard={this.updateBoard}
+          />
+          <GridRow
+            index={2}
+            boardState={this.state.boardState}
+            updateBoard={this.updateBoard}
+          />
 
           {/* <div className="grid-row">
         <div className="grid-item"></div>
